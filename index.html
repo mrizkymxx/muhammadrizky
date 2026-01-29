@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Rizky</title>
+    <title>Muhammad Rizky - Portfolio</title>
 
     <!-- Favicon -->
     <link rel="icon"
@@ -17,6 +17,653 @@
     <link
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+
+    <style>
+        /* Full-Screen Profile Hero Section */
+        .profile-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 80px 20px 60px;
+        }
+
+        .profile-hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-hero-photo-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 32px;
+        }
+
+        .photo-glow-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(126, 231, 135, 0.2) 0%, transparent 70%);
+            animation: pulseGlow 3s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .profile-hero-photo {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--terminal-green);
+            box-shadow: 0 20px 60px rgba(126, 231, 135, 0.4), 0 0 0 20px rgba(126, 231, 135, 0.1);
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .profile-hero-photo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 80px rgba(126, 231, 135, 0.6), 0 0 0 25px rgba(126, 231, 135, 0.15);
+            border-color: var(--terminal-blue);
+        }
+
+        /* Orbit Animation Container */
+        .orbit-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 380px;
+            height: 380px;
+            z-index: 2;
+        }
+
+        /* Orbit Particles (Programming Logos) */
+        .orbit-particle {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: 50%;
+            left: 50%;
+            margin: -20px 0 0 -20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .orbit-particle i {
+            font-size: 32px;
+            color: inherit;
+        }
+
+        /* Different colors from gradient theme */
+        .orbit-particle-1 {
+            color: #7ee787;
+            /* Green */
+            animation: orbit1 6s linear infinite;
+        }
+
+        .orbit-particle-2 {
+            color: #79c0ff;
+            /* Blue */
+            animation: orbit2 9s linear infinite reverse;
+        }
+
+        .orbit-particle-3 {
+            color: #e3b341;
+            /* Yellow */
+            animation: orbit3 7s linear infinite;
+        }
+
+        .orbit-particle-4 {
+            color: #ff7b72;
+            /* Red */
+            animation: orbit4 8.5s linear infinite reverse;
+        }
+
+        .orbit-particle-5 {
+            color: #c780e8;
+            /* Purple */
+            animation: orbit5 10s linear infinite;
+        }
+
+        .orbit-particle-6 {
+            color: #4ecdc4;
+            /* Cyan */
+            animation: orbit6 7.5s linear infinite reverse;
+        }
+
+        @keyframes orbit1 {
+            0% {
+                transform: rotate(0deg) translateX(190px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(190px) rotate(-360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes orbit2 {
+            0% {
+                transform: rotate(0deg) translateX(210px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(210px) rotate(-360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes orbit3 {
+            0% {
+                transform: rotate(0deg) translateX(175px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(175px) rotate(-360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes orbit4 {
+            0% {
+                transform: rotate(0deg) translateX(200px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(200px) rotate(-360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes orbit5 {
+            0% {
+                transform: rotate(0deg) translateX(185px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(185px) rotate(-360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes orbit6 {
+            0% {
+                transform: rotate(0deg) translateX(195px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(195px) rotate(-360deg);
+                opacity: 0;
+            }
+        }
+
+        .profile-hero-info {
+            margin-top: 20px;
+        }
+
+        .profile-name {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0 0 12px 0;
+            font-family: var(--font-sans);
+        }
+
+        .profile-title {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin: 0 0 24px 0;
+            font-family: var(--font-mono);
+        }
+
+        .profile-badges {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .badge {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            background: var(--bg-secondary);
+            border-color: var(--terminal-green);
+            transform: translateY(-2px);
+        }
+
+        .profile-tagline {
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 24px 0 32px 0;
+        }
+
+        .profile-tagline .highlight {
+            color: var(--terminal-green);
+            font-weight: 600;
+            font-size: 22px;
+        }
+
+        .profile-hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .btn-large {
+            padding: 14px 28px;
+            font-size: 16px;
+        }
+
+        .profile-stats {
+            display: flex;
+            gap: 48px;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-primary);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--terminal-green);
+            font-family: var(--font-mono);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator i {
+            display: block;
+            margin-top: 8px;
+            font-size: 20px;
+            color: var(--terminal-green);
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+
+
+            .profile-hero-photo {
+                width: 220px;
+                height: 220px;
+            }
+
+            .photo-glow-ring {
+                width: 280px;
+                height: 280px;
+            }
+
+            .profile-name {
+                font-size: 36px;
+            }
+
+            .profile-title {
+                font-size: 16px;
+            }
+
+            .profile-tagline {
+                font-size: 16px;
+            }
+
+            .profile-tagline .highlight {
+                font-size: 18px;
+            }
+
+            .profile-hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn-large {
+                width: 100%;
+            }
+
+            .profile-stats {
+                gap: 32px;
+            }
+
+            .stat-number {
+                font-size: 24px;
+            }
+        }
+
+        /* Orbit animations with bounce effect to avoid name text */
+        @keyframes orbit1 {
+            0% {
+                transform: rotate(0deg) translateX(190px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            40% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            60% {
+                opacity: 0;
+            }
+
+            70% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(190px) rotate(-360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes orbit2 {
+            0% {
+                transform: rotate(0deg) translateX(210px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            40% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            60% {
+                opacity: 0;
+            }
+
+            70% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(210px) rotate(-360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes orbit3 {
+            0% {
+                transform: rotate(0deg) translateX(175px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            40% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            60% {
+                opacity: 0;
+            }
+
+            70% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(175px) rotate(-360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes orbit4 {
+            0% {
+                transform: rotate(0deg) translateX(200px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            40% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            60% {
+                opacity: 0;
+            }
+
+            70% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(200px) rotate(-360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes orbit5 {
+            0% {
+                transform: rotate(0deg) translateX(185px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            40% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            60% {
+                opacity: 0;
+            }
+
+            70% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(185px) rotate(-360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes orbit6 {
+            0% {
+                transform: rotate(0deg) translateX(195px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            40% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            60% {
+                opacity: 0;
+            }
+
+            70% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(195px) rotate(-360deg);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -54,79 +701,82 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-background">
-            <div class="grid-pattern"></div>
-        </div>
-        <div class="hero-content">
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <div class="terminal-buttons">
-                        <span class="btn-close"></span>
-                        <span class="btn-minimize"></span>
-                        <span class="btn-maximize"></span>
+    <!-- Full-Screen Profile Hero Section -->
+    <section id="home" class="profile-hero">
+        <div class="container">
+            <div class="profile-hero-content">
+                <!-- Large Profile Photo -->
+                <div class="profile-hero-photo-wrapper">
+                    <div class="photo-glow-ring"></div>
+
+                    <!-- Orbit Animation Particles -->
+                    <div class="orbit-container">
+                        <div class="orbit-particle orbit-particle-1">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="orbit-particle orbit-particle-2">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <div class="orbit-particle orbit-particle-3">
+                            <i class="fab fa-docker"></i>
+                        </div>
+                        <div class="orbit-particle orbit-particle-4">
+                            <i class="fab fa-linux"></i>
+                        </div>
+                        <div class="orbit-particle orbit-particle-5">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="orbit-particle orbit-particle-6">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
                     </div>
-                    <div class="terminal-title">rizky@admin-server:~$</div>
+
+                    <img src="IMG_4681.JPG" alt="Muhammad Rizky" class="profile-hero-photo">
                 </div>
-                <div class="terminal-body">
-                    <div class="terminal-line">
-                        <span class="prompt">rizky@server:~$</span>
-                        <span class="command">whoami</span>
+
+                <!-- Profile Information -->
+                <div class="profile-hero-info">
+                    <h1 class="profile-name">Muhammad Rizky</h1>
+                    <p class="profile-title">Sistem Informasi</p>
+                    <div class="profile-badges">
+                        <span class="badge">💻 IT & Development</span>
+                        <span class="badge">📦 Warehouse</span>
+                        <span class="badge">📊 Administrator</span>
+                        <span class="badge">🔧 System</span>
+                        <span class="badge">📈 Business Analyst</span>
+                        <span class="badge">💰 Finance</span>
                     </div>
-                    <div class="terminal-output">
-                        <div class="output-line">Karyawan Serbaguna</div>
-                        <div class="output-line">Bisa Kerja Lapangan + Bangun Sistem</div>
-                        <div class="output-line">Hemat Biaya - 1 Orang untuk Berbagai Peran</div>
+                    <p class="profile-tagline">
+                        <span class="highlight">Siap Bekerja di Posisi Apa Saja</span><br>
+                        Hemat Biaya - 1 Orang untuk Berbagai Peran
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="profile-hero-buttons">
+                        <a href="#systems" class="btn btn-secondary btn-large">
+                            <i class="fas fa-server"></i>
+                            Lihat Sistem Saya
+                        </a>
+                        <a href="https://wa.me/6281393177004" target="_blank" class="btn btn-secondary btn-large">
+                            <i class="fab fa-whatsapp"></i>
+                            Chat WhatsApp
+                        </a>
+                        <a href="CV Resume Muhammad Rizky 2025.pdf" download class="btn btn-secondary btn-large">
+                            <i class="fas fa-download"></i>
+                            Download CV
+                        </a>
                     </div>
-                    <div class="terminal-line">
-                        <span class="prompt">rizky@server:~$</span>
-                        <span class="command">cat keahlian-saya.txt</span>
-                    </div>
-                    <div class="terminal-output">
-                        <div class="output-line">✓ Purchasing & Negosiasi Vendor</div>
-                        <div class="output-line">✓ Kontrol Produksi & Stok Gudang</div>
-                        <div class="output-line">✓ Bangun Sistem ERP Sendiri (Odoo/ERPNext)</div>
-                        <div class="output-line">✓ Bahasa Inggris Lancar (Bisnis)</div>
-                    </div>
-                    <div class="terminal-line">
-                        <span class="prompt">rizky@server:~$</span>
-                        <span class="command typing-animation">./cari-kerja --posisi="Apa Saja"</span>
-                        <span class="cursor">|</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-text">
-                <h1>Siap Bekerja di Posisi <br>Apa Saja yang Anda Butuhkan</h1>
-                <p>Saya bukan sekadar karyawan biasa. Saya punya pengalaman <b>kerja lapangan</b> (Purchasing, Produksi,
-                    Gudang) <b>Serta</b> bisa bangun <b>sistem digital</b> sendiri. Cocok untuk perusahaan yang
-                    ingin merapikan administrasi tanpa harus hire banyak orang.</p>
-                <div class="hero-buttons">
-                    <a href="#systems" class="btn btn-primary">
-                        <i class="fas fa-server"></i>
-                        Lihat Sistem Saya
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        <i class="fab fa-whatsapp"></i>
-                        Chat WhatsApp
-                    </a>
-                    <a href="CV Resume Muhammad Rizky 2025.pdf" download class="btn btn-secondary">
-                        <i class="fas fa-download"></i>
-                        Download CV
-                    </a>
-                </div>
-                <div class="quick-stats">
-                    <div class="stat">
-                        <span class="stat-number">4+</span>
-                        <span class="stat-label">Tahun Pengalaman</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">3</span>
-                        <span class="stat-label">Sistem ERP Live</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">Siap</span>
-                        <span class="stat-label">Posisi Apa Saja</span>
+
+                    <!-- Quick Stats -->
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">4+</span>
+                            <span class="stat-label">Tahun Pengalaman</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Sistem ERP Live</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -139,7 +789,7 @@
             <div class="section-header">
                 <div class="section-prompt">
                     <span class="prompt">rizky@server:~$</span>
-                    <span class="command">cat profil_saya.json</span>
+                    <span class="command">cat profil_saya.txt</span>
                 </div>
                 <h2 class="section-title"># Profil Profesional</h2>
             </div>
@@ -620,7 +1270,7 @@
                                 </div>
                                 <div class="script-line">
                                     <span class="variable">STATUS</span>=<span class="string">"Terbuka untuk
-                                        Lowongan"</span>
+                                        Lowongan Pekerjaan"</span>
                                 </div>
                             </div>
                         </div>
